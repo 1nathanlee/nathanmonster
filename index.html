@@ -1,0 +1,175 @@
+<title>nathan.monster</title>
+<meta name="description" content="my site!"/>
+
+<header>
+<img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/skins/30yrspunk_topskin.jpg">
+</header>
+
+<nav>
+<table cellpadding="0" cellspacing="0" width="760px" height="6px">
+
+  <tr valign="top">
+  <td align="center" width="124px" bgcolor="#246178"><a onclick="openCity(event, 'home')">home</a></td>
+  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
+  <td align="center" width="124px" bgcolor="#246178"><a onclick="openCity(event, 'test')">posters</a></td>
+  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
+  <td align="center" width="124px" bgcolor="#246178">3</td>
+  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
+  <td align="center" width="124px" bgcolor="#246178">4</td>
+  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
+  <td align="center" width="124px" bgcolor="#246178">5</td>
+  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
+  <td align="center" width="124px" bgcolor="#246178">6</td>
+  </tr>
+  
+</table>
+</nav>
+
+<div class="main">
+
+<div class="left" width="180px" height="950px">
+<br>
+Nathan A. Lee<br>
+is a 17 year old high-school senior and
+aspiring designer.
+</div>
+
+<div class="right" width="578px" height="950px">
+<div id="home" class="tabcontent">
+<br>
+hi
+</div>
+<div id="test" class="tabcontent">
+<br>
+posters here
+</div>
+</div>
+
+</div>
+
+
+<footer>
+<table cellpadding="0" cellspacing="0" width="760px">
+
+<tr height="12px">
+  <td align="left">handcoded</td>
+  <td align="right">by me</td>
+</tr>
+  
+</table>
+</footer>
+
+<img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/skins/default_botskin.jpg" id="studded">
+
+<div class="copy">
+<table cellpadding="0" cellspacing="0" width="760px">
+
+<tr height="12px">
+  <td align="right">&copy; 2025 Nathan A. Lee . all rights reserved</td>
+</tr>
+  
+</table>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<style>
+body {
+    background-color:black;
+    color:white;
+    font-family: ms gothic;
+    width:760px;
+    height:1150px;
+}
+header {
+  width:760px;
+  height:70px;
+  position:absolute;
+  left:3px;
+  top:3px;
+}
+.main {
+  position:absolute;
+  left:3px;
+  top:105px;
+}
+.left {
+  background-color:#548597;
+  height:944px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:174px;
+  text-align:center;
+  padding:3px;
+}
+.right {
+  background-color:#548597;
+  height:950px;
+  position:absolute;
+  left:184px;
+  top:0px;
+  width:576px;
+  text-align:center;
+}
+#home {
+    display:inline-block;
+}
+nav {
+  width:760px;
+  position:absolute;
+  left:3px;
+  top:79px;
+  text-align:center;
+}
+footer {
+  width:760px;
+  position:absolute;
+  left:3px;
+  top:1060px;
+  text-align:center;
+}
+#studded {
+  width:760px;
+  position:absolute;
+  left:3px;
+  top:1085px;
+  text-align:center;
+}
+.copy {
+  width:760px;
+  position:absolute;
+  left:3px;
+  top:1130px;
+}
+@font-face {
+	font-family: 'pixelout';
+	src: url('/pixelout.ttf') format('truetype');
+}
+.tab {
+  overflow: hidden;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+.tab button.active {
+  background-color:#F1B2D2;
+  color:#e00d80;
+}
+</style>
