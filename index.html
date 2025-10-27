@@ -1,483 +1,69 @@
-<title>nathan.monster</title>
-<meta name="description" content="my site!"/>
-<script>
-		jQuery.noConflict();
-		(function($){
-			$(document).ready(function(){
-				$("[title]").style_my_tooltips({ 
-					tip_follows_cursor:true, //boolean
-					tip_delay_time:100, //milliseconds
-					tip_fade_speed:100 //milliseconds
-				});
-				//dynamically added elements demo function
-				$("a[rel='add new element']").click(function(e){
-					e.preventDefault();
-					$(this).attr("title","Add another element").parent().after("<p title='New paragraph title'>This is a new paragraph! Hover to see the title.</p>");
-				});
-			});
-		})(jQuery);
-	</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<script>
-//style-my-tootltips by malihu (http://manos.malihu.gr)
-//plugin home http://manos.malihu.gr/style-my-tooltips-jquery-plugin
-(function($) {
-    var methods = {
-        init: function(options) {
-            var defaults = {
-                tip_follows_cursor: false, //tooltip follows cursor: boolean
-                tip_delay_time: 0, //tooltip delay before displaying: milliseconds
-                tip_fade_speed: 100, //tooltip fade in/out speed: milliseconds
-                attribute: "title" //tooltip text come from this attribute
-            },
-                options = $.extend(defaults, options);
-            if ($("#s-m-t-tooltip").length === 0) {
-                $("body").append("<div id='s-m-t-tooltip'><div></div></div>");
-            }
-            var smtTooltip = $("#s-m-t-tooltip");
-            smtTooltip.css({
-                "position": "absolute",
-                "display": "none"
-            }).data("smt-z-index", smtTooltip.css("z-index")).children("div").css({
-                "width": "100%",
-                "height": "100%"
-            });
+<title>nathanalee.work</title>
+<meta name="description" content="Nathan A. Lee's Portfolio, Graphic Design student at Southeastern Louisiana University." />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-            function smtGetCursorCoords(event) {
-                var smtCursorCoordsX = event.pageX,
-                    smtCursorCoordsY = event.pageY;
-                smtTooltip.style_my_tooltips("position", {
-                    smtCursorCoordsX: smtCursorCoordsX,
-                    smtCursorCoordsY: smtCursorCoordsY
-                });
-            }
-            $(document).on("mouseout mousedown click", ".smt-current-element", function() {
-                var $this = $(this);
-                clearTimeout(smtTooltip_delay);
-                smtTooltip.style_my_tooltips("hide", {
-                    speed: $this.data("smt-fade-speed")
-                });
-                $(document).unbind("mousemove");
-                $this.removeClass("smt-current-element");
-                if ($this.attr(options.attribute) === "") {
-                    $this.attr(options.attribute, $this.data("smt-title"));
-                }
-            });
-            return this["on"]("mouseover", function(event) {
-                var $this = $(this),
-                    title = $this.attr(options.attribute);
-                $this.addClass("smt-current-element").data({
-                    "smt-title": title,
-                    "smt-fade-speed": options.tip_fade_speed
-                }).attr(options.attribute, "");
-                smtTooltip.style_my_tooltips("update", {
-                    title: title,
-                    speed: options.tip_fade_speed,
-                    delay: options.tip_delay_time,
-                    tip_follows_cursor: options.tip_follows_cursor
-                });
-                $(document).bind("mousemove", function(event) {
-                    smtGetCursorCoords(event);
-                });
-            });
-        },
-        update: function(options) {
-            var $this = $(this);
-            $this.stop().css({
-                "display": "none",
-                "z-index": $this.data("smt-z-index")
-            }).children("div").text(options.title);
-            smtTooltip_delay = setTimeout(function() {
-                $this.style_my_tooltips("show", {
-                    speed: options.speed,
-                    tip_follows_cursor: options.tip_follows_cursor
-                })
-            }, options.delay);
-        },
-        show: function(options) {
-            var $this = $(this);
-            $this.stop().fadeTo(options.speed, 1);
-            if (!options.tip_follows_cursor) {
-                $(document).unbind("mousemove");
-            }
-        },
-        hide: function(options) {
-            var $this = $(this);
-            $this.stop().fadeTo(options.speed, 0, function() {
-                $this.css({
-                    "z-index": "-1"
-                });
-            });
-        },
-        position: function(options) {
-            var $this = $(this),
-                winScrollX = $(window).scrollLeft(),
-                winScrollY = $(window).scrollTop(),
-                tipWidth = $this.outerWidth(true),
-                tipHeight = $this.outerHeight(true),
-                leftOffset = (options.smtCursorCoordsX + tipWidth) - winScrollX,
-                topOffset = (options.smtCursorCoordsY + tipHeight) - winScrollY;
-            if (leftOffset <= $(window).width() && leftOffset <= $(document).width()) {
-                $this.css("left", options.smtCursorCoordsX);
-            } else {
-                var thePosX = options.smtCursorCoordsX - tipWidth;
-                if (thePosX >= winScrollX) {
-                    $this.css("left", thePosX);
-                } else {
-                    $this.css("left", winScrollX);
-                }
-            }
-            if (topOffset <= $(window).height() && topOffset <= $(document).height()) {
-                $this.css("top", options.smtCursorCoordsY);
-            } else {
-                var thePosY = options.smtCursorCoordsY - tipHeight;
-                if (thePosY >= winScrollY) {
-                    $this.css("top", thePosY);
-                } else {
-                    $this.css("top", winScrollY);
-                }
-            }
-        }
-    }
-    $.fn.style_my_tooltips = function(method) {
-        if (methods[method]) {
-            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-        } else if (typeof method === "object" || !method) {
-            return methods.init.apply(this, arguments);
-        } else {
-            $.error("Method " + method + " does not exist");
-        }
-    };
-})(jQuery);
-</script>
-
+<center>
 <header>
-<img src="https://nathan.monster/nathanheader.png">
+Nathan A. Lee
 </header>
 
-<nav>
-<table cellpadding="0" cellspacing="0" width="760px" height="6px">
-
-  <tr valign="top">
-  <td align="center" width="124px" bgcolor="#246178"><a onclick="openCity(event, 'home')">home</a></td>
-  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
-  <td align="center" width="124px" bgcolor="#246178"><a onclick="openCity(event, 'test')">posters</a></td>
-  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
-  <td align="center" width="124px" bgcolor="#246178">3</td>
-  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
-  <td align="center" width="124px" bgcolor="#246178">4</td>
-  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
-  <td align="center" width="124px" bgcolor="#246178">5</td>
-  <td bgcolor="black" width="1px"><img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/img/i.gif" width="1px" height="12px" border="0"></td>
-  <td align="center" width="124px" bgcolor="#246178">6</td>
-  </tr>
-  
-</table>
-</nav>
-
-<div class="main">
-
-<div class="left" width="180px" height="950px">
-<br>
-Nathan A. Lee<br>
-is a 17 year old high-school senior and
-aspiring designer.
-<br><br>
-<a href="https://www.credly.com/earner/earned/badge/e93be52e-0a8e-4ce9-8808-f223e0b995f8"><img src="/photoshop.png" width="100px"></a><br><br>
-<a href="https://www.credly.com/earner/earned/badge/5597ee7b-ddee-42c2-974f-119b044c1c3d"><img src="/illustrator.png" width="100px"></a>
-<br><br>outlinks<br><br><a href="https://guts-psd.tumblr.com/">tumblr</a><br><a href="https://boyfriendrequest.substack.com/">substack</a>
+<main>
+<img src="/skull.png" width="150px" style="border: 2px solid #EE6B02; margin-bottom:10px;">
+<p>Nathan A. Lee (18, he/they) is a Graphic Design freshman<br>at Southeastern Louisiana University.</p>
+<img src="https://nathan.monster/photoshop.png" width="100px">
+<img src="https://nathan.monster/illustrator.png" width="100px">
+<p style="color:white;">Currently: Creating social media graphics for Southeastern Gaming Club.</p>
+<div>
+<img class="pics" src="https://nathan.monster/graphics/shufflestreetfighter.png">
+<img class="pics" src="https://nathan.monster/graphics/slushshufflesept11.png">
+<img class="pics" src="https://nathan.monster/graphics/slushshufflesept24.png">
+<img class="pics" src="https://nathan.monster/graphics/tekken8.png">
+<img class="pics" src="https://nathan.monster/graphics/halloweeninstagram.png">
+<img class="pics" src="https://nathan.monster/graphics/gamingclubtexturedposter.png">
 </div>
-
-<div class="right" width="578px" height="950px">
-<center>
-<div id="home" class="tabcontent">
-<br>
-recent work:<br><br>
-<table width="500px" style="border:1px solid white;">
-<tr>
-<th><img src="https://nathan.monster/posters/fancythatfinal.webp" width="250px" title="Fancy That by PinkPantheress Poster"></th>
-<th><img src="https://nathan.monster/posters/BLUEIVY.webp" width="250px" title="Blue Ivy Carter Poster"></th>
-</tr>
-</table>
-
-</div>
-<div id="test" class="tabcontent">
-<br>
-
-<table width="500px" style="border:1px solid white;">
-<tr>
-<th><img src="https://nathan.monster/posters/fancythatfinal.webp" width="250px" title="Fancy That by PinkPantheress Poster"></th>
-<th><img src="https://nathan.monster/posters/BLUEIVY.webp" width="250px" title="Blue Ivy Carter Poster"></th>
-</tr>
-<tr>
-<th><img src="https://nathan.monster/posters/PULLTHEPLUGA4.webp" width="250px" title="PULL THE PLUG ON AI ART!"></th>
-<th><img src="https://nathan.monster/posters/vogue.webp" width="250px" title="Vogue"></th>
-</tr>
-</table>
-
-</div>
-</center>
-</div>
-
-</div>
-
+</main>
 
 <footer>
-<table cellpadding="0" cellspacing="0" width="760px">
-
-<tr height="12px">
-  <td align="left">handcoded</td>
-  <td align="right">by me</td>
-</tr>
-  
-</table>
+© 2025 Nathan A. Lee , Hand-coded & hosted on Github<br>
+Contact: nathanalee(at)proton(dot)me<br>
+SOCIALS
 </footer>
-
-<img src="https://web.archive.org/web/20060417145730im_/http://www.hottopic.com/skins/default_botskin.jpg" id="studded">
-
-<div class="copy">
-<table cellpadding="0" cellspacing="0" width="760px">
-
-<tr height="12px">
-  <td align="right">&copy; 2025 Nathan A. Lee . all rights reserved</td>
-</tr>
-  
-</table>
-</div>
-
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
-
-<script>
-// create references to the modal...
-var modal = document.getElementById('myModal');
-// to all images -- note I'm using a class!
-var images = document.getElementsByClassName('myImages');
-// the image in the modal
-var modalImg = document.getElementById("img01");
-// and the caption in the modal
-var captionText = document.getElementById("caption");
-
-// Go through all of the images with our custom class
-for (var i = 0; i < images.length; i++) {
-  var img = images[i];
-  // and attach our click listener for this image.
-  img.onclick = function(evt) {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  }
-}
-
-var span = document.getElementsByClassName("close")[0];
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
-</script>
+</center>
 
 <style>
-body {
-    background-color:black;
-    color:white;
-    font-family: 'msgoth';
-    width:760px;
-    height:1150px;
+
+body { 
+font-size:20px;
+margin: 0;
+background-color:#0D0907;
+color:#EE6B02;
+font-family: 'frankgoth';
 }
-header {
-  width:760px;
-  height:70px;
-  position:absolute;
-  left:3px;
-  top:3px;
-}
-.main {
-  position:absolute;
-  left:3px;
-  top:100px;
-}
-.left {
-  background-color:#548597;
-  height:944px;
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:174px;
-  text-align:center;
-  padding:3px;
-}
-.right {
-  background-color:#548597;
-  height:950px;
-  position:absolute;
-  left:184px;
-  top:0px;
-  width:576px;
-  text-align:center;
-}
-#home {
-    display:inline-block;
-}
-nav {
-  width:760px;
-  position:absolute;
-  left:3px;
-  top:79px;
-  text-align:center;
+main {
+    margin-top:20px;
+    margin-bottom:20px;
+    width:800px;
+    line-height:1.3;
 }
 footer {
-  width:760px;
-  position:absolute;
-  left:3px;
-  top:1060px;
-  text-align:center;
+  overflow: hidden;
+  color:black;
+  background-color: #EE6B02;
+  padding: 10px 10px;
+  line-height:1.5;
 }
-#studded {
-  width:760px;
-  position:absolute;
-  left:3px;
-  top:1085px;
-  text-align:center;
-}
-.copy {
-  width:760px;
-  position:absolute;
-  left:3px;
-  top:1130px;
+header {
+font-size:50px;
+  overflow: hidden;
+  color:black;
+  background-color: #EE6B02;
+  padding: 20px 10px;
 }
 @font-face {
-	font-family: 'msgoth';
-	src: url('/msgothic.ttf') format('truetype');
+	font-family: 'frankgoth';
+	src: url('/FranklinGothic.ttf') format('truetype');
 }
-.tab {
-  overflow: hidden;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-}
-.tab button.active {
-  background-color:#F1B2D2;
-  color:#97022b;
-}
-a {
-color:white;
-}
-a:hover {
-color:#97022b;
-transition:1s;
-}
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 100px;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/ opacity */
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 60%;
-  max-width: 500px;
-}
-
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-.modal-content,
-#caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0)
-  }
-  to {
-    transform: scale(1)
-  }
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
-}
-#s-m-t-tooltip{
-	/* basic */
-	max-width:300px;
-	z-index:10;
-	margin:24px 14px 7px 12px;
-	/* style and design */
-	padding:8px;
-	background:#222; /* fallback if rgba not supported */
-	background:rgba(0,0,0,0.8);
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	-moz-box-shadow:2px 2px 0 rgba(0,0,0,0.15),-1px -1px 0 rgba(255,255,255,0.3);
-	-webkit-box-shadow:2px 2px 0 rgba(0,0,0,0.15),-1px -1px 0 rgba(255,255,255,0.3);
-	box-shadow:2px 2px 0 rgba(0,0,0,0.15),-1px -1px 0 rgba(255,255,255,0.3);
-	/* font */
-	font-family:Verdana,Geneva,sans-serif;
-	font-size:11px;
-	line-height:16px;
-	color:#fff;
+.pics {
+    width:300px;
 }
 </style>
