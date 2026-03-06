@@ -28,7 +28,7 @@ header {
 hr {
     border:1px solid white;
 }
-summary {
+#pages {
     font-family:typeblock;
     font-size:38px;
     letter-spacing:-3px;
