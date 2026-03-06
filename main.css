@@ -1,0 +1,35 @@
+body {
+    color:white;
+    font-family :  'msgoth';
+    background-image:url("/tiledbg.jpg");
+    background-size:15px;
+}
+@font-face {
+	font-family: 'typeblock';
+	src: url('/typeblock.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'msgoth';
+	src: url('/msgothic.ttf') format('truetype');
+}
+header {
+    font-family:typeblock;
+    font-size:42px;
+    letter-spacing:-3px;
+}
+#mainImg {
+    border:3px double white;
+}
+.bottomleft {
+    position:absolute;
+    left:5px;
+    bottom:5px;
+}
+hr {
+    border:1px solid white;
+}
+summary {
+    font-family:typeblock;
+    font-size:38px;
+    letter-spacing:-3px;
+}
