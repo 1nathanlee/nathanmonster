@@ -22,9 +22,6 @@ header {
 #mainImg {
     border:3px double white;
 }
-#mainframe {
-    width:500px;
-}
 .bottomleft {
     position:absolute;
     left:5px;
