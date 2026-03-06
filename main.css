@@ -23,7 +23,7 @@ header {
     border:3px double white;
 }
 .bottomleft {
-    position:absolute;
+    position:fixed;
     left:5px;
     bottom:5px;
 }
