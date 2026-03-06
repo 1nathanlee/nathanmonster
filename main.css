@@ -22,7 +22,7 @@ header {
 #mainImg {
     border:3px double white;
 }
-.mainFrame {
+#mainframe {
     width:500px;
 }
 .bottomleft {
