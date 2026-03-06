@@ -16,6 +16,8 @@ header {
     font-family:typeblock;
     font-size:42px;
     letter-spacing:-3px;
+    color:white;
+    text-decoration:none;
 }
 #mainImg {
     border:3px double white;
