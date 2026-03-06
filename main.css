@@ -36,3 +36,10 @@ hr {
     letter-spacing:-3px;
     color:white;
 }
+#headertxt {
+    font-family:typeblock;
+    font-size:42px;
+    letter-spacing:-3px;
+    color:white;
+    text-decoration:none;
+}
