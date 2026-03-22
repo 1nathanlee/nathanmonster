@@ -99,7 +99,7 @@ document.addEventListener('mousemove', (e) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const linkContainer = document.querySelector(".left");
-    const targetDiv = document.getElementById("circle");
+    const targetDiv = document.getElementByClassName("circle");
 
     linkContainer.addEventListener("mouseover", (event) => {
         if (event.target.tagName === "A") {
