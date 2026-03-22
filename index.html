@@ -96,4 +96,21 @@ document.addEventListener('mousemove', (e) => {
   circle.style.left = `${mouseX}px`;
   circle.style.top = `${mouseY}px`;
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const linkContainer = document.querySelector(".left");
+    const targetDiv = document.getElementById("circle");
+
+    linkContainer.addEventListener("mouseover", (event) => {
+        if (event.target.tagName === "A") {
+            targetDiv.classList.add("active");
+        }
+    });
+
+    linkContainer.addEventListener("mouseout", (event) => {
+        if (event.target.tagName === "A") {
+            targetDiv.classList.remove("active");
+        }
+    });
+});
 </script>
