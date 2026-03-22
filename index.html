@@ -100,19 +100,17 @@ document.addEventListener('mousemove', (e) => {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const linkContainer = document.querySelector(".linkd");
+    const link = document.querySelector(".linkd");
     const targetDiv = document.querySelector(".circle");
 
-    linkContainer.addEventListener("mouseover", (event) => {
-        if (event.target.tagName === "A") {
-            targetDiv.classList.add("active");
-        }
+    if (!link || !targetDiv) return;
+
+    link.addEventListener("mouseenter", () => {
+        targetDiv.classList.add("active");
     });
 
-    linkContainer.addEventListener("mouseout", (event) => {
-        if (event.target.tagName === "A") {
-            targetDiv.classList.remove("active");
-        }
+    link.addEventListener("mouseleave", () => {
+        targetDiv.classList.remove("active");
     });
 });
 </script>
