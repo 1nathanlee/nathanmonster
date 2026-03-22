@@ -47,7 +47,7 @@ hr {
   position: fixed;
   width: 50px;
   height: 50px;
-  background-color: rgba(117, 156, 147, 1);
+  background-color: #e77298;
   border-radius: 50%;
   transform: translate(-45%, -40%);
   pointer-events: none;
@@ -55,7 +55,7 @@ hr {
   z-index: 9999;
 }
 .circle.active {
-  background-color: #e77298;
+  background-color: #32ae94;
   width: 30px;
   height: 30px;
   transition: all 0.15s ease;
