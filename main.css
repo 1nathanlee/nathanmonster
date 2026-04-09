@@ -34,7 +34,6 @@ hr {
     font-family:typeblock;
     font-size:38px;
     letter-spacing:-3px;
-    color:white;
 }
 #headertxt {
     font-family:typeblock;
@@ -43,6 +42,10 @@ hr {
     color:white;
     text-decoration:none;
 }
+a {
+    color:white;
+}
+
 a:hover {
     color:#2b4024;
     transition:0.5s;
